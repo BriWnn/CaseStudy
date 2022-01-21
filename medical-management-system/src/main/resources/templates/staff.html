@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" >
+<title>Staff Management View</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+	<link href="/css/stylesAdmin.css" rel="stylesheet" />
+	
+</head>
+<body>
+	
+
+
+<div class="topnav">
+  <a href="/">Homepage</a>
+  <a class="active" href="staff">Staff</a>
+  <a href="patient">Patients</a>
+  <a href="logout">Log out</a>
+</div>
+
+	<div class ="container">
+		<div class = "row">
+			<h1> List Staff</h1>
+			</div>
+			
+			<div class = "row">
+				<div class = "col-Lg-3">
+				<a th:href = "@{/staff/new}" class = "btn btn-primary btn-sm mb-3">Add Staff Member</a>
+				</div>
+			</div>
+	<table class="table-striped table-bordered">
+  	<thead class = "table-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Title</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each = "staff: ${staff}">
+      <td th:text="${staff.firstName}"></td>
+      <td th:text="${staff.lastName}"></td>
+      <td th:text="${staff.title}"></td>
+      <td>
+      
+      <a th:href = "@{/staff/edit/{id}(id=${staff.id})}"
+						 class = "btn btn-primary">Update</a>
+						
+						<a th:href = "@{/staff/{id}(id=${staff.id})}"
+						 class = "btn btn-danger">Delete</a>
+      
+      </td>	
+
+    </tr>
+  </tbody>
+</table>
+		
+		
+	</div>
+
+
+
+
+
+
+</body>
+</html>

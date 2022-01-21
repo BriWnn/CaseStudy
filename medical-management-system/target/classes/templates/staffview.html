@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Staff User Dashboard</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+<link href="/css/stylesAdmin.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+
+<div class="topnav">
+  <a class="active" href="/">Homepage</a>
+  <a href="staffview">Patients</a>
+  <a href="logout">Log out</a>
+</div>
+
+<div class ="container">
+		<div class = "row">
+			<h1> List Patients</h1>
+			</div>
+
+<div class="body-text">
+<!-- body content -->
+
+		</div>
+	<table class="table-striped table-bordered">
+  	<thead class = "table-dark">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>DOB</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each = "patient: ${patient}">
+      <td th:text="${patient.firstName}"></td>
+      <td th:text="${patient.lastName}"></td>
+      <td th:text="${patient.dob}"></td>
+     
+
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+</body>
+
+</html>

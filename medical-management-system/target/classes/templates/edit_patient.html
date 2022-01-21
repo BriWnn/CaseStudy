@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+
+
+<title>Patient Management View</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+					   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+					   crossorigin="anonymous">
+
+</head>
+<body>
+
+
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Patient Manager</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/patient}">Patient Management</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<br>
+<br>
+<br>
+
+
+<div class ="container">
+
+</div>
+
+	<div class = "row">
+	
+	</div>
+	
+	
+		<div class = "col-Lg-6 col-md-6 col-sm-6 container justify-content-center card">
+			<h1 class = "text-center"> Update Patient Information</h1>
+			<div class = "card-body">
+				<form th:action="@{/patient/{id} (id=${patient.id})}" th:object = "${patient}" method="POST">
+					<div class = "form-group">
+						<label>First Name</label>
+						<input 
+					    type = "text" 
+						name = "firstName" 
+						field = "*{firstName}"
+						class = "form-control"
+						placeholder="Enter First Name" />
+					</div>
+					
+					<div class = "form-group">
+						<label>Last Name</label>
+						<input 
+					    type = "text" 
+						name = "lastName" 
+						field = "*{lastName}"
+						class = "form-control"
+						placeholder="Enter Last Name" />
+					</div>
+					
+					<div class = "form-group">
+						<label>Date of Birth</label>
+						<input 
+					    type = "text" 
+						name = "dob" 
+						field = "*{dob}"
+						class = "form-control"
+						placeholder="Enter Date of Birth" />
+					</div>
+					
+					<div class = "footer-body">
+						<button type = "submit" class = "btn btn-primary">
+						Submit
+						</button>
+					
+					</div>
+				
+				</form>
+			
+			
+			</div>
+		
+		</div>
+
+</body>
+</html>
